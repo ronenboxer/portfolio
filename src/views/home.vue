@@ -4,7 +4,7 @@
 
     <app-header @slideTo="slideTo" :activeSlideIndex="activeSlideIndex"
       :modules="modules" />
-    <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange" noSwiping="true" noSwipingClass="swiper-slide">
+    <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange" noSwiping="true" noSwipingClass="">
       <swiper-slide><overview-page /></swiper-slide>
       <swiper-slide><project-list /></swiper-slide>
       <swiper-slide><tech-list /></swiper-slide>

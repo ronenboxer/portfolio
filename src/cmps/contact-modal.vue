@@ -1,43 +1,49 @@
 <template>
-    <section class="contact-modal fixed flex" :class="{ active: isActive }">
-        <button class="close-btn absolute" v-icon="'close'" @click="onClose"></button>
-        <div class="flex column form-container">
-            <h2>Let's talk!</h2>
-            <div ref="recaptchaRef"></div>
-            <form class="flex column" action="https://formbold.com/s/oYqWL" method="POST">
-                <label for="email">
-                    <span class="uppercase">Email</span>
-                    <input @input="onInput('email')" id="email" name="email" v-model="email" type="email"
-                        placeholder="Required" required>
-                </label>
-                <label for="subject">
-                    <span class="uppercase">Subject</span>
-                    <input @input="onInput('subject')" id="subject" name="subject" v-model="subject" type="text"
-                        placeholder="Optional">
-                </label>
-                <textarea @input="onInput('message')" name="message" v-model="message" rows="5" placeholder="Message"
-                    required></textarea>
-                <span class="words-left">{{ wordsLeft }}</span>
-                <div class="submission flex between align-center">
-                    <div class="g-recaptcha" :data-sitekey="key"></div>
-                    <submit-button type="submit" :isValid="isValid" />
-                    <a class="cv flex center" href="https://github.com/ronenboxer/portfolio/raw/main/src/assets/Ronen-Boxer-CV.pdf" download>CV</a>
+    <section :style="{ pointerEvents: isActive ? 'auto' : 'none' }" class="modal-screen fixed">
+        <div class="contact-modal fixed flex" :class="{ active: isActive }" v-clickOutside="onClose">
+            <button class="close-btn absolute" v-icon="'close'" @click="onClose"></button>
+            <div class="flex column form-container">
+                <h2>Let's talk!</h2>
+                <div ref="recaptchaRef"></div>
+                <form class="flex column" action="https://formbold.com/s/oYqWL" method="POST">
+                    <label for="email">
+                        <span class="uppercase">Email</span>
+                        <input @input="onInput('email')" id="email" name="email" v-model="email" type="email"
+                            placeholder="Required" required>
+                    </label>
+                    <label for="subject">
+                        <span class="uppercase">Subject</span>
+                        <input @input="onInput('subject')" id="subject" name="subject" v-model="subject" type="text"
+                            placeholder="Optional">
+                    </label>
+                    <textarea @input="onInput('message')" name="message" v-model="message" rows="5" placeholder="Message"
+                        required></textarea>
+                    <span class="words-left">{{ wordsLeft }}</span>
+                    <div class="submission flex between align-center">
+                        <div class="g-recaptcha" :data-sitekey="key"></div>
+                        <submit-button type="submit" :isValid="isValid" />
+                        <a class="cv flex center"
+                            href="https://github.com/ronenboxer/portfolio/raw/main/src/assets/Ronen-Boxer-CV.pdf"
+                            download>CV</a>
+                    </div>
+                </form>
+                <div class="social flex center">
+                    <a target="_blank" class="inline-block contact" href="https://wa.me/972527735437" v-icon="'phone'"
+                        title="052-773-5437"></a>
+                    <a target="_blank" class="inline-block contact" href="mailto:ronenboxer@gmail.com" v-icon="'email'"
+                        title="Ronen.Boxer@gmail.com"></a>
+                    <a target="_blank" class="inline-block contact"
+                        href="https://www.linkedin.com/in/ronen-boxer-471436203/" v-icon="'linkedin'"></a>
+                    <a target="_blank" class="inline-block contact" href="https://github.com/ronenboxer"
+                        v-icon="'github'"></a>
                 </div>
-            </form>
-            <div class="social flex center">
-                <a target="_blank" class="inline-block contact" href="https://wa.me/972527735437" v-icon="'phone'"
-                    title="052-773-5437"></a>
-                <a target="_blank" class="inline-block contact" href="mailto:ronenboxer@gmail.com" v-icon="'email'"
-                    title="Ronen.Boxer@gmail.com"></a>
-                <a target="_blank" class="inline-block contact"
-                    href="https://www.linkedin.com/in/ronen-boxer-471436203/" v-icon="'linkedin'"></a>
-                <a target="_blank" class="inline-block contact" href="https://github.com/ronenboxer"
-                    v-icon="'github'"></a>
             </div>
-        </div>
-        <div class="galaxy relative">
-            <galaxy :isShown="false" />
-            <p class="absolute center">Download my <a class="cv" href="https://github.com/ronenboxer/portfolio/raw/main/src/assets/Ronen-Boxer-CV.pdf" download>CV</a></p>
+            <div class="galaxy relative">
+                <galaxy :isShown="false" />
+                <p class="absolute center">Download my <a class="cv"
+                        href="https://github.com/ronenboxer/portfolio/raw/main/src/assets/Ronen-Boxer-CV.pdf"
+                        download>CV</a></p>
+            </div>
         </div>
     </section>
 </template>

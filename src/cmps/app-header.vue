@@ -1,5 +1,5 @@
 <template>
-  <header ref="headerRef" class="app-header sticky full" @scroll="console.log('sdcsdc')">
+  <header ref="headerRef" class="app-header sticky full">
     <nav class="main-nav flex between align-center">
       <a class="flex center logo page" @click="scrollTo('universe')" v-icon="'logo'">
       </a>
@@ -54,6 +54,9 @@ export default {
     slideTo(target) {
       this.isMenuActive = false
       this.$emit('slideTo', target)
+    },
+    scrollTo(target) {
+      document.querySelector('.' + target)?.scrollIntoView()
     },
     onContact() {
       this.isMenuActive = false
