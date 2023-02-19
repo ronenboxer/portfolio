@@ -1,5 +1,5 @@
 <template>
-    <section class="contact-modal absolute flex" :class="{ active: isActive }">
+    <section class="contact-modal fixed flex" :class="{ active: isActive }">
         <button class="close-btn absolute" v-icon="'close'" @click="onClose"></button>
         <div class="flex column form-container">
             <h2>Let's talk!</h2>

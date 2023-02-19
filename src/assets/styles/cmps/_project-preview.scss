@@ -72,9 +72,13 @@
 		transform: rotate(-180deg);
 	}
 
-	.s_round:hover .b_round {
-		transform: scale(1.37);
-		opacity: 0.4;
+	.s_round {
+		@include hover-supported() {
+			.b_round {
+				transform: scale(1.37);
+				opacity: 0.4;
+			}
+		}
 	}
 
 	.content {
@@ -118,15 +122,18 @@
 			width: 100%;
 			justify-items: center;
 
-			>a:hover {
+			>a {
 
-				img,
-				.img-skeleton {
-					opacity: .8;
-				}
+				@include hover-supported() {
 
-				h2 {
-					text-decoration: underline;
+					img,
+					.img-skeleton {
+						opacity: .8;
+					}
+
+					h2 {
+						text-decoration: underline;
+					}
 				}
 			}
 
@@ -290,7 +297,8 @@
 						flex-grow: 0;
 						height: fit-content;
 					}
-					.proj-subtitle{
+
+					.proj-subtitle {
 						flex-grow: 1;
 					}
 				}

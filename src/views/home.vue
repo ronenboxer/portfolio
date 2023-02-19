@@ -4,7 +4,7 @@
 
     <app-header @slideTo="slideTo" :activeSlideIndex="activeSlideIndex"
       :modules="modules" />
-    <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange" :allowTouchMove="false">
+    <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange" noSwiping="true" noSwipingClass="swiper-slide">
       <swiper-slide><overview-page /></swiper-slide>
       <swiper-slide><project-list /></swiper-slide>
       <swiper-slide><tech-list /></swiper-slide>
@@ -55,6 +55,9 @@ export default {
     this.swiper = new Swiper('.swiper', {
       speed: SPEED,
       spaceBetween: 0,
+      allowTouchMove: false,
+      noSwipingClass: 'swiper-slide',
+      noSwiping: true
     })
   },
   methods: {
