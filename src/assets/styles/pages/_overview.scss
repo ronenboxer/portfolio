@@ -1,0 +1,248 @@
+.overview {
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 100px;
+
+    h1 {
+        @include main-title();
+    }
+
+    .honeycomb {
+        $hexagon-width: 200px;
+        $hexagon-height: $hexagon-width*.55;
+        $hexagon-margin: 25px;
+        $hexagon-title-color: $concrete-white;
+        $honeycomb-max-width: $layout-max-width;
+        $viewport-thereshold: calc($hexagon-width + $hexagon-margin);
+        $transition-opacity: 400ms;
+
+        $from-r: 9;
+        $from-g: 10;
+        $from-b: 15;
+        $to-r: 26;
+        $to-g: 45;
+        $to-b: 89;
+        $to-hover-r: 60;
+        $to-hover-g: 60;
+        $to-hover-b: 60;
+        $number: 10;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        max-width: $honeycomb-max-width;
+        margin: 0 auto;
+        padding: 0;
+        transform: translateY(#{calc($hexagon-height/4)});
+
+
+        &-cell {
+            flex: 0 1 $hexagon-width;
+            max-width: $hexagon-width;
+            height: $hexagon-height;
+            margin: calc($hexagon-height/2.1) calc($hexagon-margin/2) $hexagon-margin;
+            position: relative;
+            padding: 0.5em;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            text-align: center;
+            z-index: 1;
+
+            @for $i from 1 through $number {
+                &:nth-child(#{$i})::before {
+                    background: -webkit-linear-gradient(to bottom right, calcRgbaColor($i, true, $number, $from-r, $from-g, $from-b, $to-r, $to-g, $to-b), calcRgbaColor($i, false, $number, $from-r, $from-g, $from-b, $to-r, $to-g, $to-b)) !important;
+                    background: linear-gradient(to bottom right, calcRgbaColor($i, true, $number, $from-r, $from-g, $from-b, $to-r, $to-g, $to-b), calcRgbaColor($i, false, $number, $from-r, $from-g, $from-b, $to-r, $to-g, $to-b)) !important;
+                }
+            }
+
+            &.avatar::before{
+                transform: scale(1.015);
+            }
+
+            &.empty {
+                opacity: 0 !important;
+            }
+
+            &__title {
+                height: 100%;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: $hexagon-title-color;
+                font-weight: 500;
+                font-size: 1.2em;
+                transition: opacity $transition-opacity;
+
+                hr {
+                    width: 75%;
+                    border-width: .4px;
+                }
+
+                h3 {
+                    font-size: inherit;
+                    font-weight: inherit;
+                    font-family: inherit;
+                    margin-top: 18px;
+                    padding-bottom: 10px;
+                    border-bottom: .6px solid $hexagon-title-color;
+                    width: 100%;
+                    margin-inline: auto;
+                }
+
+                >small {
+                    font-size: .8em;
+                    font-weight: 300;
+                    margin-top: 0.25em;
+
+                    &.grid {
+                        display: grid;
+                        grid-template-columns: rem(26px) rem(26px);
+                        gap: 10px;
+                        margin: 10px auto 0;
+
+
+                        .contact {
+                            font-size: 1.3rem;
+                            max-width: rem(26px);
+                            height: rem(26px);
+                            overflow: hidden;
+                            margin: auto;
+                            transition: max-width .3s;
+
+                            &:hover {
+                                max-width: fit-content;
+                                $this-color: lighten($hexagon-title-color, 10%);
+                                border-bottom: .6px solid $this-color;
+                                color: $this-color;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &__image {
+                object-fit: cover;
+                object-position: center;
+                color: $explosive;
+                font-size: 1.825em;
+                transition: color $transition-opacity;
+
+
+                svg {
+                    font-size: 1.825em;
+                }
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                transition: opacity $transition-opacity;
+            }
+
+            &::before,
+            &::after,
+            &__image {
+                top: -50%;
+                left: 0;
+                width: 100%;
+                height: 200%;
+                position: absolute;
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                z-index: -1;
+            }
+
+            &::before {
+                transition: opacity $transition-opacity;
+            }
+
+            &::after {
+                opacity: 0;
+                transition: opacity $transition-opacity;
+            }
+
+            @for $i from 1 through $number {
+                &:nth-child(#{$i}):hover::after {
+                    background: -webkit-linear-gradient(to bottom right, calcRgbaColor($i, true, $number, $from-r, $from-g, $from-b, $to-hover-r, $to-hover-g, $to-hover-b), calcRgbaColor($i, false, $number, $from-r, $from-g, $from-b, $to-hover-r, $to-hover-g, $to-hover-b));
+                    background: linear-gradient(to bottom right, calcRgbaColor($i, true, $number, $from-r, $from-g, $from-b, $to-hover-r, $to-hover-g, $to-hover-b), calcRgbaColor($i, false, $number, $from-r, $from-g, $from-b, $to-hover-r, $to-hover-g, $to-hover-b));
+                }
+            }
+
+            &:hover {
+
+                .honeycomb-cell__title {
+                    opacity: 0.75;
+                }
+                &::after {
+                    opacity: 0.75;
+                }
+
+                .honeycomb-cell__image {
+                    color: transparent;
+                }
+            }
+        }
+
+        &__placeholder {
+            display: none;
+            opacity: 0.75;
+            width: $hexagon-width;
+            margin: 0 calc($hexagon-margin/2);
+        }
+
+        @media (max-width:#{calc(2*$viewport-thereshold)}) {
+            .honeycomb-cell {
+                margin: #{calc($hexagon-margin/2 + $hexagon-height/2)} $hexagon-margin;
+
+                &.empty {
+                    display: none !important;
+                }
+            }
+        }
+
+        @media (min-width: #{2*$viewport-thereshold}) and (max-width:#{3*$viewport-thereshold}) {
+            .honeycomb-cell:nth-child(3n) {
+                margin-right: calc(50% - #{calc($hexagon-width/2)});
+                margin-left: calc(50% - #{calc($hexagon-width/2)});
+            }
+
+            .honeycomb__placeholder:nth-child(3n + 5) {
+                display: block;
+            }
+        }
+
+        @media (min-width: #{3*$viewport-thereshold}) and (max-width:#{4*$viewport-thereshold}) {
+            .honeycomb-cell:nth-child(5n + 4) {
+                margin-left: calc(50% - #{$hexagon-width + $hexagon-margin});
+            }
+
+            .honeycomb-cell:nth-child(5n + 5) {
+                margin-right: calc(50% - #{$hexagon-width + $hexagon-margin});
+            }
+
+            .honeycomb__placeholder:nth-child(5n),
+            .honeycomb__placeholder:nth-child(5n + 3) {
+                display: block;
+            }
+        }
+
+        @media (min-width: #{4*$viewport-thereshold}) {
+            .honeycomb-cell:nth-child(7n + 5) {
+                margin-left: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+            }
+
+            .honeycomb-cell:nth-child(7n + 7),
+            .honeycomb-cell:nth-child(7n + 5):nth-last-child(2) {
+                margin-right: calc(50% - #{$hexagon-width*1.5 + $hexagon-margin});
+            }
+
+            .honeycomb__placeholder:nth-child(7n + 7),
+            .honeycomb__placeholder:nth-child(7n + 9),
+            .honeycomb__placeholder:nth-child(7n + 11) {
+                display: block;
+            }
+
+        }
+    }
+}

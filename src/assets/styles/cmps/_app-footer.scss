@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+
+.app-footer {
+    width: 100vw;
+    height: 60px;
+    z-index: 7;
+    background-color: #1b1b1bbb;
+    color: $concrete-white;
+    top: calc(100vh - 60px);
+
+    .modal-container{
+        overflow: hidden;
+        height: 60px;
+        margin: auto;
+
+        .contact-button{
+
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s ease-in-out;
+            @include transparent($concrete-white);
+            background-color: #00000022;
+            cursor: pointer;
+            font-size: rem(18px);
+            font-weight: 300;
+            letter-spacing: 1.2px;
+            padding: 8px 30px;
+            border-radius: 1000px;
+            border: 1px solid $concrete-white;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+            @include hover-supported(){
+                color: $martini-green;
+                border-color: $martini-green;
+            }
+            
+            &.active{
+                transition: opacity .3s ease-in-out;
+                // transition-delay: .2s;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+    .screen{
+        height: calc(100vh - 60px);
+        bottom: 60px;
+        background-color: #1b1b1bbb;
+        max-height: 0;
+        transition: max-height .3s ease-in-out;
+
+
+        &.active{
+            transition-delay: 0s;
+            max-height: calc(100vh - 60px);
+        }
+
+    }
+}

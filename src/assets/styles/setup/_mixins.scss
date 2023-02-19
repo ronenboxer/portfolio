@@ -1,0 +1,119 @@
+/* Breakpoint mixins */
+
+@mixin for-mobile-layout {
+    @media (max-width: calc($mobile-breakpoint + 2*$layout-margin)) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (min-width: calc($mobile-breakpoint + 2*$layout-margin)) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (min-width: calc($narrow-breakpoint + 2*$layout-margin)) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (min-width: calc($normal-breakpoint + 2*$layout-margin)) {
+        @content;
+    }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: calc(($height / $width) * 100%);
+    }
+
+    >* {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    >img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@mixin main-title {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    font-size: rem(36px);
+    margin-bottom: 20px;
+    margin-top: 40px;
+
+}
+
+// Mixin for removing hover efects on iphone screen
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+
+@mixin transparent($color: black) {
+    border: none;
+    background-color: transparent;
+    outline: transparent;
+    color: $color;
+}
+
+@mixin round($width: $layout-margin) {
+    width: $width;
+    height: $width;
+    border-radius: 50%;
+}
+
+
+
+@mixin hexagon() {
+    clip-path: polygon(50% 0, 93.30127% 25%, 93.30127% 75%, 50% 100%, 6.69872% 75%, 6.69872% 25%);
+}
+
+@mixin scroll-style($size: 10px,
+    $thumb: none,
+    $thumb-color: grey,
+    $thumb-radius: 10px,
+    $track-color: transparent,
+    $track-radius: 10px) {
+
+    // Respaldo para Firefox
+    scrollbar-color: $thumb-color $track-color;
+    scrollbar-width: thin;
+
+    // Navegadores basados en webkit
+    &::-webkit-scrollbar {
+        width: $size;
+        height: $size;
+
+        &-track {
+            background-color: $track-color;
+            border-radius: $track-radius;
+        }
+
+        &-thumb {
+            background-color: $thumb-color;
+            background-image: $thumb;
+            border-radius: $thumb-radius;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+[
+    {
+        "title": "someday",
+        "subtitle": "A Monday clone submitted as the final sprint for the Coding Academy Bootcamp.",
+        "repo": [
+            "someday-front",
+            "someday-back"
+        ],
+        "page": "http://someday.onrender.com",
+        "about": [
+            "A Monday clone, using CRUDL and MVC, the app supports drag and drop of tasks, columns and groups, Kanban view and dashboard.",
+            "Guests  are free to use the app, however one may sign up or use their google accounts to sign in.",
+            "Working gon this project with to fellow students (Tomer Vardi and Refael Avramov) was demanding but satisfying, since we did not compromise on functionality nor UI.",
+            "Using chrome dev tools and Vue dev tools, we managed to debug most of the issues but due to the short deadline we might have missed some.",
+            "I feel personally proud of implementing the multi filter, which is written generically so that additional filter keys can be added in the future. Using RegExp, I highlighted text filter results.",
+            "A similar logic was used to render tasks in Kanban view, and I plan to use it in order to display tasks divided to groups by many parameters.",
+            "Handling the data with MonogoDB on the back was quite fun too. Using task, group, board and user services, we managed to keep data flow quite efficient."
+        ],
+        "techs": [
+            "vue",
+            "es6",
+            "sass",
+            "draggable",
+            "nodejs",
+            "express",
+            "axios",
+            "git",
+            "socket",
+            "mongo",
+            "postman"
+        ],
+        "imgName": "someday.gif"
+    },
+    {
+        "title": "kessef",
+        "subtitle": "A bitcoin transfer service. Originally developed using React, I have re written the project using Angular during Angular workshop.",
+        "repo": [
+            "kessef"
+        ],
+        "page": "http://ronenboxer.github.io/kessef",
+        "about": [
+            "A bitcoin fund transfer app, with login and sign up. The app features contact service with pre made contact list and options to edit, remove or add contacts.",
+            "During four days of Angular workshop, I managed to implement CRUD, MVC and ajax calls to get data for the dashboard charts. The app uses local storage as daily cache to prevent repeated calls.",
+            "The app offers a range of time differences for data analysis.",
+            "During development, I faced challenges of working in a new environment after thee comforts of Vue. Learning about pipes and subscriptions was easy, however coping with the mechanism while having to debug errors was quite the experience.",
+            "Fortunately the web is full of solutions and I managed to submit this project for review on time."
+        ],
+        "techs": [
+            "angular",
+            "ts",
+            "es6",
+            "sass"
+        ],
+        "imgName": "kessef.gif"
+    },
+    {
+        "title": "game of life",
+        "subtitle": "Assignment after John Conway's game of life. Originally developed using vanilla JS and HTML table, now using React and HTML canvas.",
+        "repo": [
+            "game-of-life"
+        ],
+        "page": "http://ronenboxer.github.io/game-of-life",
+        "about": [
+            "This was my first project post Coding. I was on my own, having only a few days of experience in React.",
+            "Once an exclusive fan of Vue, I became aware of the pros React hasa on Vue. Parent-child component sync is clearer to my taste, and debugging is way simpler having akk of the code in one source. One thing that blew my mind is the power of hooks.",
+            "This app contains a lot of code and logic. I had to calculate the mouse coordinates related to the canvas element and the window, take into account mobile users and touch events and sync every event to match the correct type, since it is all written in Type Script.",
+            "The thing that I spent most of the time on is efficiency. I immigrated from rendering divs and tables in order to improve performance, so I didn't want to render an entire canvas on every mouserover. I came up with a logic to save renders which worked fine.",
+            "Another challenge was to make the UI appealing and intuitive. I didn't want too compromise on looks, functionality and performance, so I took the time to do my best in each aspect. Unfortunately there are still some issues on mobile devices, and I hope to get to them soon enough."
+        ],
+        "techs": [
+            "react",
+            "ts",
+            "sass",
+            "npm"
+        ],
+        "imgName": "gameoflife.gif"
+    },
+    {
+        "title": "missread",
+        "subtitle": "Bookshop management app. First vue project.",
+        "repo": [
+            "missread"
+        ],
+        "page": "http://ronenboxer.github.io/missread",
+        "about": [
+            "It seems a while ago since I've worked on this project. This was four days into Vue workshop, done in one afternoon as I invested all of myself in it. It was a bit sad letting go of this project as the next day we were assigned new homework.",
+            "The app features a home page, a book list page, book details page, edit page and supports review, as well as routing options using Vue hash router.",
+            "The app also supports google books search"
+        ],
+        "techs": [
+            "vue",
+            "es6",
+            "sass"
+        ],
+        "imgName": "missread.gif"
+    },
+    {
+        "title": "mine sweeper",
+        "subtitle": "The classic game with some twists submitted as the first sprint in Coding Academy Bootcamp.",
+        "repo": [
+            "minesweeper"
+        ],
+        "page": "http://ronenboxer.github.io/minesweeper",
+        "about": [
+            "One of all time favorite games as it is based purely on logic. I was delighted to work on this project.",
+            "Made with vanilla JS, this was my first project to submit. Looking back I cringe at the way I wrote the code, and how I avoided pitfalls. Never again.",
+            "Rendered as an HTML table, the game uses recursive unfolding from the very first click. The mines are position randomly after the first cell reveal.",
+            "I addition to the basic features (labeling cells as sage or unknown using the right click), user time and high scores, I managed to implement all of the bonuses for the assignment: ",
+            "3 lives, safe click - that flickers a safe cell with the number of mines around it",
+            "Hint - when a cell is clicked it and its neighbor cells are flickered",
+            "Mega hint - select two cells and reveal all cell between them",
+            "Exterminate - randomly rid of up to 3 mines. ",
+            "Undo / redo - Sorry for bragging, but no one managed to implement a redo button",
+            "7BOOM mode - places mines on every index that is either a multiplication of 7 oor has 7 its digits",
+            "Multiplayer - a player can position mines and than challenge their friend to try to win the game",
+            "Dark mode / light mode"
+        ],
+        "techs": [
+            "html",
+            "css",
+            "js"
+        ],
+        "imgName": "minesweeper.gif"
+    }
+]

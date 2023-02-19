@@ -1,0 +1,137 @@
+.home {
+    background-color: $concrete-white;
+
+    .universe {
+        .welcome-sign {
+            top: 50vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $concrete-white;
+            text-align: center;
+            font-size: 1.2rem;
+
+            >* {
+                line-height: 1.4;
+            }
+
+            h1 {
+                margin-inline: auto;
+                width: max-content;
+                max-width: calc(100vw - 2 * $layout-margin);
+                font-family: 'Exo', sans-serif;
+                font-weight: normal;
+
+                .brand {
+                    color: $martini-green;
+                }
+            }
+
+            .btn {
+                margin-top: 20px;
+                margin-inline: auto;
+                padding: 20px 40px;
+                width: 260px;
+                border: 4px solid $concrete-white;
+                -webkit-tap-highlight-color: transparent;
+                -webkit-appearance: button;
+                cursor: pointer;
+                overflow: hidden;
+                background-color: transparent;
+                font-size: inherit;
+                font-family: 'Exo', sans-serif;
+                font-weight: normal;
+                color: inherit;
+
+                *,
+                :after,
+                :before,
+                &:after,
+                &:before {
+                    border: none;
+                    box-sizing: border-box;
+                }
+
+                &:disabled {
+                    cursor: default;
+                }
+
+                &:-moz-focusring {
+                    outline: none;
+                }
+
+                [hidden] {
+                    display: none;
+                }
+
+                &:before {
+                    $tilt: 1.2rem;
+                    background: $concrete-white;
+                    -webkit-clip-path: polygon(0 0,
+                            calc(100% - $tilt) 0,
+                            100% 50%,
+                            calc(100% - $tilt) 100%,
+                            0 100%);
+                    clip-path: polygon(0 0,
+                            calc(100% - $tilt) 0,
+                            100% 50%,
+                            calc(100% - $tilt) 100%,
+                            0 100%);
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    left: calc(-101% - $tilt);
+                    position: absolute;
+                    top: 0;
+                    transform: translateX(var(--progress, 0));
+                    transition: transform 0.2s ease;
+                    width: calc(101% + $tilt);
+                }
+
+                &:hover {
+                    svg {
+                        transform: rotate(90deg);
+                    }
+
+                    &:before {
+                        --progress: 99%;
+                    }
+                }
+
+                span {
+                    mix-blend-mode: difference;
+                    gap: 10px;
+                    font-size: inherit;
+                    font-family: inherit;
+                    font-weight: inherit;
+                    color: inherit;
+
+                    svg {
+                        display: block;
+                        vertical-align: middle;
+                        transition: transform .3s ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper {
+        width: 100vw;
+        height: calc(100vh - 60px);
+
+        .swiper-slide>* {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .swiper-slide, .swiper-slide *{
+            --scroll-size: 8px;
+            --scroll-radius: 10px;
+            --scroll-track: rgb(255 255 255 / 10%);
+            --scroll-thumb-color: rgb(0 0 0 / 80%);
+            @include scroll-style($size: var(--scroll-size, 10px),
+                $thumb: var(--scroll-thumb, none),
+                $thumb-color: var(--scroll-thumb-color, grey));
+        }
+    }
+}

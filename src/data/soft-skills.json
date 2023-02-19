@@ -1,0 +1,43 @@
+[
+    {
+        "title":"Team player, collaborative and communicative",
+        "description":[
+            "As a teacher, I had to cooperate with my colleagues. Each teacher has their ways of doing things, so naturally I had to compromise or convince others when with a disagreement. We always settled our differences peacefully.",
+        "While working with fellow students on Someday clone project, we decided to get uniform approval before coding independently.",
+        "I found that mixing humor with daily routines makes every task enjoyable."
+        ]
+    },
+    {
+        "title":"Patient and open to criticism",
+        "description":[
+            "I had the pleasure of working with and study under great people with brilliant minds, so I found it practical to listen to their advice, whether to improve or correct my work. If I realize that I have made a mistake or hurt someone, I always apologize and try to learn from my mistakes."
+        ]
+    },
+    {
+        "title":"Logic, problem solving and analytical bent of mind",
+        "description":[
+            "A colleague from school always sent student to me when they needed help with understanding principals in math.",
+            "While working on projects as a full stack student, I had classmates ask for my assistance with an algorithmic challenges.",
+            "I was the head debugger in our team when working on Someday. I enjoyed trying different logics to solve our main issue: How to keep the app reactive if its content is always editable, as Vue doesn't allow mutating state outside of store and we wanted to avoid deep copy. My solution was to have a function that listen to changes and sends them to the store for optimistic rendering."
+        ]
+    },
+    {
+        "title":"Ambitious and curious",
+        "description":[
+            "I aspire many things and in order to achieve them I practice, research and study. For my latest project (Game of life), I went over documentations and tutorials to implement features that demanded knowledge I didn't have such as understand React rendering process and state management.",
+            "While working on my portfolio, I encountered a challenge when trying to implement a global gradient background for multiple elements without using JavaScript. After doing extensive research on CSS functions and experimenting with different approaches, I was able to come up with a CSS-only solution. I was happy to share this solution with others, including Chat GPT, who also found it to be effective."
+        ]
+    },
+    {
+        "title":"Initiative, creative and attentive to details",
+        "description":[
+            "As a teacher I wanted the children to learn from me all that I had to offer, so besides my position as aa music instructor I taught about gardening and the nature of growing plants. I had the children research growing conditions for a selection of plants and decide which one would fit best at their home. I bought seeds and by the end of winter they all blossomed."
+        ]
+    },
+    {
+        "title":"Time management, organizing and attention to details",
+        "description":[
+            "I never missed an assignment during the full stack course. In order to submit every project while maintaining my job as a music teacher I had to prioritize, plan ahead and execute tasks precisely. Having a vision of the work to be done, steps to be taken and splitting tasks too micro tasks were the keys to meet the standard that I had set to myself."
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+.main-layout{
+    margin-inline: $layout-margin;
+
+    @media (min-width: $layout-max-width) {
+        width: $layout-max-width;
+        margin-inline: auto;
+    }
+}
+
+.full{
+    width: 100vw;
+}
