@@ -15,6 +15,7 @@
 	margin-bottom: 94px;
 	border-radius: 24px;
 	opacity: .999;
+	z-index: 60;
 
 	@for $i from 1 through $number-of-projects {
 		&:nth-child(#{$i}) {

@@ -1,5 +1,5 @@
 <template>
-    <article class="project-preview flex-center">
+    <article class="project-preview flex-center relative">
         <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" @click="jump">
             <div class='b_round absolute' :class="{ b_round_back_hover: isRoundBackHover }"></div>
             <div class='s_arrow flex center absolute' :class="{ s_arrow_rotate: isRotate }" v-icon="'arrow'"></div>
