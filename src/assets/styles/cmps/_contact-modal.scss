@@ -145,7 +145,7 @@
                     font-weight: 300;
                     letter-spacing: 2px;
                     font-size: rem(14px);
-                    border-radius: 7px;
+                    border-radius: 7px !important;
                     color: $martini-green;
 
                     @include hover-supported() {

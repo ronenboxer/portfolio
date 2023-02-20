@@ -1,6 +1,6 @@
 <template>
     <article class="project-preview flex-center relative">
-        <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" aria-hidden="true"
+        <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" 
             @click="jump">
             <div class='b_round absolute' :class="{ b_round_back_hover: isRoundBackHover }"></div>
             <div class='s_arrow flex center' :class="{ s_arrow_rotate: isRotate }" v-icon="'arrow'"></div>
@@ -20,9 +20,6 @@
                     <div class="techs-container">
                         <span class="tech-logo" v-for="tech in proj.techs" :key="tech" v-icon="tech"></span>
                     </div>
-                    <!-- <label :for="'card'+id" class="button" aria-hidden="true" @click="jump">
-                        Details
-                    </label> -->
 
                 </div>
             </div>
@@ -39,9 +36,6 @@
                     </ul>
                     <h2>About the project</h2>
                     <p v-for="p in proj.about" key="Math.random()">{{ p }}</p>
-                    <!-- <label :for="'card'+id" class="button return" aria-hidden="true" @click="jump">
-                        <i class="fas fa-arrow-left">back</i>
-                    </label> -->
                 </div>
             </div>
         </div>
