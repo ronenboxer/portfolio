@@ -8,12 +8,12 @@
     padding-inline: 30px;
     $small-break-point: 460px;
     width: 100%;
+    padding-top: 40px;
 
     @media (min-width: (800px + 2*$layout-margin)) {
         margin: auto;
     }
 
-    height: 100%;
 
     h1 {
         @include main-title();

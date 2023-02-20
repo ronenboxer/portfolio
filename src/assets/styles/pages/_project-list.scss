@@ -1,8 +1,7 @@
 $number-of-projects: 5;
 
 .projects {
-
-    height: 100%;
+    padding-top: 40px;
 
     h1 {
         @include main-title();

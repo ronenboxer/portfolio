@@ -2,15 +2,15 @@
 
 .app-footer {
     width: 100vw;
-    height: 60px;
+    height: $footer-height;
     z-index: 58;
     background-color: #1b1b1b;
     color: $concrete-white;
-    top: calc(100vh - 60px);
+    bottom: 0;
 
     .modal-container{
         overflow: hidden;
-        height: 60px;
+        height: $footer-height;
         margin: auto;
 
         .contact-button{
@@ -43,8 +43,8 @@
         }
     }
     .screen{
-        height: calc(100vh - 60px);
-        bottom: 60px;
+        height: 100vh;
+        bottom: 0;
         background-color: #1b1b1bbb;
         max-height: 0;
         transition: max-height .3s ease-in-out;
@@ -52,7 +52,7 @@
 
         &.active{
             transition-delay: 0s;
-            max-height: calc(100vh - 60px);
+            max-height: 100vh;
         }
 
     }
