@@ -51,18 +51,9 @@ $hover-color: $dirty-green;
         height: $header-height;
 
         .logo {
-            // margin-inline-start: $layout-margin;
+            padding: 0;
             fill: #ededed;
-
-            @media (max-width: 370px) {
-                margin-inline-start: 10px;
-                width: 105px;
-            }
-
-            @media (max-width: 280px) {
-                margin-inline-start: 0px;
-                width: 85px;
-            }
+            width: 90px;
         }
 
         .menu {
@@ -142,7 +133,7 @@ $hover-color: $dirty-green;
 
     a.logo {
         height: $header-height;
-        padding-inline: 20px !important;
+        // padding-inline: 20px;
         width: $link-width;
     }
 }
