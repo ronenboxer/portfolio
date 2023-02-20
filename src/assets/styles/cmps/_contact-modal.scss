@@ -176,6 +176,11 @@
 
         @media (max-width:370px) {
             width: calc(100vw - 20px);
+            height: 520px;
+
+            &.active{
+                max-height: 520px;
+            }
 
             .form-container {
                 form {
@@ -192,7 +197,7 @@
                         display: block;
 
                         >* {
-                            width: 100%;
+                            width: 100% !important;
                             margin-bottom: 6px;
                         }
                     }

@@ -68,6 +68,10 @@
                 padding-inline: $padding;
                 font-size: rem(16px);
 
+                p{
+                    font-weight: 200;
+                }
+
                 @media (max-width:$small-break-point) {
                     padding-inline: 10px;
                     font-size: rem(12px);

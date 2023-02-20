@@ -24,7 +24,7 @@
                         <submit-button type="submit" :isValid="isValid" />
                         <a class="cv flex center"
                             href="https://github.com/ronenboxer/portfolio/raw/main/src/assets/Ronen-Boxer-CV.pdf"
-                            download>CV</a>
+                            download>Get my CV</a>
                     </div>
                 </form>
                 <div class="social flex center">
