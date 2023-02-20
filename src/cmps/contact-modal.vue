@@ -50,14 +50,7 @@
 
 <script>
 import galaxy from './galaxy.vue'
-import Axios from 'axios'
 import submitButton from './submit-button.vue'
-// grecaptcha.enterprise.ready(function() {
-//     grecaptcha.enterprise.execute('6LeDrZEkAAAAAMQnGTxvhHmdFe8XqxjPdGjGAh3k', {action: 'login'})
-//     .then(function(token) {
-
-//     })
-// })
 export default {
     name: '',
     props: { isActive: Boolean, closeModal: Function },
@@ -91,7 +84,6 @@ export default {
             email = email.trim().replace(this.securityRegex, 'sk/ri/pt')
             subject = subject.trim().replace(this.securityRegex, 'sk/ri/pt')
             message = message.trim().replace(this.securityRegex, 'sk/ri/pt')
-            console.log(`message:`, message)
         },
         onInput(field) {
             if (!this[field]) return

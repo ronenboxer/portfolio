@@ -26,10 +26,6 @@ $hover-color: $dirty-green;
     color: $concrete-white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-    // @media (pointer:coarse) {
-    //     top: 20px;
-    // }
-
     .page {
         font-size: rem(18px);
         transition: background-color .2s;
@@ -125,15 +121,10 @@ $hover-color: $dirty-green;
         width: $link-width;
         height: $header-height;
         padding-inline: 20px !important;
-
-        @media (max-width: $mobile-breakpoint) {
-            // width: 100%;
-        }
     }
 
     a.logo {
         height: $header-height;
-        // padding-inline: 20px;
         width: $link-width;
     }
 }

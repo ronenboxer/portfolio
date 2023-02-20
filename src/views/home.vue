@@ -50,7 +50,6 @@ export default {
   computed: {
     getHeight() {
       const target = Object.keys(this.slidesMap).find(t => this.slidesMap[t] === this.activeSlideIndex)
-      debugger
       return document.querySelector('.' + target)?.getBoundingClientRect().height || 'auto'
     }
   },

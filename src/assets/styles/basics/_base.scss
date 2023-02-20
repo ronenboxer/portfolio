@@ -27,6 +27,11 @@ body {
     font-size: 14px;
     letter-spacing: 2px;
     background-color: $concrete-white;
+
+    @media only screen and (pointer:coarser) and (orientation:portrait) {
+        height: 100vw;
+        transform: rotate(90deg);
+    }
 }
 
 h1,
@@ -56,9 +61,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    // text-decoration: underline;
-}
 
 .grecaptcha-badge {
     visibility: hidden;

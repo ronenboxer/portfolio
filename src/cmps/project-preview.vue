@@ -87,7 +87,6 @@ export default {
             }, 300);
         },
         handleError() {
-            console.log(`123:`, 123)
             this.isLoading = true
         },
         handleLoad() {

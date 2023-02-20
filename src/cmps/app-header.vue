@@ -36,8 +36,6 @@ export default {
   mounted() {
     this.elMenuIcon = this.$refs.menuIcon.$el
     this.elHeader = this.$refs.headerRef
-    // window.addEventListener('scroll', this.handleScroll)
-
     document.querySelector('body').addEventListener('scroll', this.handleScroll)
   },
   unmounted() {
@@ -73,6 +71,4 @@ export default {
     menuIcon
   },
 }
-
-// document.addEventListener("scroll", ()=>console.log('asdhi'), false)
 </script>

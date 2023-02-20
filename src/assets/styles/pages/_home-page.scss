@@ -114,24 +114,4 @@
             }
         }
     }
-
-    .swiper {
-        width: 100vw;
-        // height: calc(100vh - 60px);
-
-        .swiper-slide>* {
-            overflow-y: auto;
-            // height: 100%;
-        }
-
-        .swiper-slide, .swiper-slide *{
-            --scroll-size: 8px;
-            --scroll-radius: 10px;
-            --scroll-track: rgb(255 255 255 / 10%);
-            --scroll-thumb-color: rgb(0 0 0 / 80%);
-            @include scroll-style($size: var(--scroll-size, 10px),
-                $thumb: var(--scroll-thumb, none),
-                $thumb-color: var(--scroll-thumb-color, grey));
-        }
-    }
 }
