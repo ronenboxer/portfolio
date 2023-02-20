@@ -175,66 +175,77 @@
 				}
 			}
 
-			.techs-container {
-				font-size: $icon-size;
+			.grid-container {
 				flex-grow: 2;
-				display: grid;
-				gap: 10px;
-				justify-content: center;
-				align-items: center;
-				margin-bottom: auto;
 				background-color: #ededed88;
-				padding: 20px;
-				border-radius: 5px;
 				overflow-x: hidden;
 				overflow-y: auto;
+				padding: 20px;
+				border-radius: 5px;
 				max-height: 145px;
+				.techs-container {
+					width: 100%;
+					height: 100%;
+					font-size: rem(32px);
+					display: grid;
+					gap: 10px;
+					justify-content: center;
+					align-items: center;
+					margin-bottom: auto;
 
-				.tech-logo {
-					aspect-ratio: 1;
-
-					svg {
-						font-size: $icon-size;
-					}
-
-					@media (max-width:280px) {
+					.tech-logo {
+						aspect-ratio: 1;
 						width: 32px;
 
 						svg {
 							font-size: 32px;
 						}
+
+						// svg {
+						// 	font-size: $icon-size;
+						// }
+
+						// @media (max-width:280px) {
+						// 	width: 32px;
+
+						// 	svg {
+						// 		font-size: 32px;
+						// 	}
+						// }
+
+						// @media (min-width:280px) {
+						// 	width: 48px;
+
+						// 	svg {
+						// 		font-size: 48px;
+						// 	}
+						// }
+
+						// @media (min-width:520px) {
+						// 	width: 64px;
+
+						// 	svg {
+						// 		font-size: 64px;
+						// 	}
+						// }
 					}
 
-					@media (min-width:280px) {
-						width: 48px;
-
-						svg {
-							font-size: 48px;
-						}
-					}
-
-					@media (min-width:520px) {
-						width: 64px;
-
-						svg {
-							font-size: 64px;
-						}
-					}
-				}
-
-				@media (max-width:280px) {
 					grid-template-columns: repeat(auto-fill, 32px);
 					grid-template-rows: repeat(auto-fill, 32px);
-				}
+					// @media (max-width:280px) {
+					// 	grid-template-columns: repeat(auto-fill, 32px);
+					// 	grid-template-rows: repeat(auto-fill, 32px);
+					// }
 
-				@media (min-width:280px) {
-					grid-template-columns: repeat(auto-fill, 48px);
-					grid-template-rows: repeat(auto-fill, 48px);
-				}
+					// @media (min-width:280px) {
+					// 	grid-template-columns: repeat(auto-fill, 48px);
+					// 	grid-template-rows: repeat(auto-fill, 48px);
+					// }
 
-				@media (min-width:520px) {
-					grid-template-columns: repeat(auto-fill, 64px);
-					grid-template-rows: repeat(auto-fill, 64px);
+					// @media (min-width:520px) {
+					// 	grid-template-columns: repeat(auto-fill, 64px);
+					// 	grid-template-rows: repeat(auto-fill, 64px);
+					// }
 				}
 			}
 		}

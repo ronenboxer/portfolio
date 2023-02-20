@@ -1,7 +1,6 @@
 <template>
     <article class="project-preview flex-center">
-        <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" 
-            @click="jump">
+        <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" @click="jump">
             <div class='b_round absolute' :class="{ b_round_back_hover: isRoundBackHover }"></div>
             <div class='s_arrow flex center absolute' :class="{ s_arrow_rotate: isRotate }" v-icon="'arrow'"></div>
         </label>
@@ -17,8 +16,11 @@
                         <h2 class="capitalize proj-title">{{ proj.title }}</h2>
                     </a>
                     <h3 class="proj-subtitle">{{ proj.subtitle }}</h3>
-                    <div class="techs-container">
-                        <span class="tech-logo" v-for="tech in proj.techs" :key="tech" v-icon="tech"></span>
+                    <div class="grid-container flex">
+                        <div class="techs-container">
+                            <span class="tech-logo inline-block" v-for="tech in proj.techs" :key="tech"
+                                v-icon="tech"></span>
+                        </div>
                     </div>
 
                 </div>
@@ -28,8 +30,7 @@
                     <h2>Git repository</h2>
                     <ul class="clean-list">
                         <li v-for="repo in proj.repo" key="repo">
-                            <a class="capitalize" 
-                                :href="`https://github.com/ronenboxer/${repo}`" target="_blank">
+                            <a class="capitalize" :href="`https://github.com/ronenboxer/${repo}`" target="_blank">
                                 {{ repo.split('-').join(' ') }}
                             </a>
                         </li>
