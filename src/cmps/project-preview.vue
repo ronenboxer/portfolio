@@ -1,13 +1,13 @@
 <template>
-    <article class="project-preview flex-center relative">
+    <article class="project-preview flex-center">
         <label :for="'card' + id" class='s_round absolute' :class="{ s_round_click: isRoundClicked }" 
             @click="jump">
             <div class='b_round absolute' :class="{ b_round_back_hover: isRoundBackHover }"></div>
-            <div class='s_arrow flex center' :class="{ s_arrow_rotate: isRotate }" v-icon="'arrow'"></div>
+            <div class='s_arrow flex center absolute' :class="{ s_arrow_rotate: isRotate }" v-icon="'arrow'"></div>
         </label>
         <input type="checkbox" :id="'card' + id" class="more" aria-hidden="true">
-        <div class="content">
-            <div class="front flex center">
+        <div class="content relative">
+            <div class="front absolute flex center">
                 <div class="inner flex column">
                     <a :href="proj.page" target="_blank">
                         <div v-if="isLoading" class="relative img-skeleton"></div>
@@ -23,7 +23,7 @@
 
                 </div>
             </div>
-            <div class="back">
+            <div class="back absolute">
                 <div class="inner">
                     <h2>Git repository</h2>
                     <ul class="clean-list">

@@ -1,5 +1,5 @@
 <template>
-    <footer class="app-footer absolute" :style="{ opacity: getOpacity }">
+    <footer class="app-footer fixed" :style="{ opacity: getOpacity }">
         <div class="modal-container flex column center">
             <button ref="contactBtnRef" class="contact-button" :class="{ active: !isActive }"
                 @click="() => isActive = true">Contact</button>
