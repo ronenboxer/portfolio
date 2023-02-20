@@ -1,5 +1,5 @@
 <template>
-    <section class="bio">
+    <section class="bio biography">
         <h1 class="main-layout">Biography</h1>
         <div class="timeline">
 

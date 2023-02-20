@@ -2,16 +2,16 @@
   <main class="home full" id="home">
     <galaxy @slideTo="slideTo" />
 
-    <app-header @slideTo="slideTo" :activeSlideIndex="activeSlideIndex"
-      :modules="modules" />
-    <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange" noSwiping="true" noSwipingClass="">
-      <swiper-slide><overview-page /></swiper-slide>
-      <swiper-slide><project-list /></swiper-slide>
-      <swiper-slide><tech-list /></swiper-slide>
-      <swiper-slide><bio-page /></swiper-slide>
-
-    </swiper>
-    <app-footer/>
+    <app-header @slideTo="slideTo" :activeSlideIndex="activeSlideIndex" :modules="modules" />
+    <component :is="comp" />
+    <!-- <swiper :scrollbar="true" :slides-per-view="1" createElements="true" @activeIndexChange="onActiveIndexChange"
+          :noSwiping="true" :noSwipingClass="'swiper-slide'" :height="getHeight">
+          <swiper-slide><overview-page /></swiper-slide>
+          <swiper-slide><project-list /></swiper-slide>
+          <swiper-slide><tech-list /></swiper-slide>
+          <swiper-slide><bio-page /></swiper-slide>
+        </swiper> -->
+    <app-footer />
   </main>
 </template>
 
@@ -40,12 +40,14 @@ export default {
     return {
       modules: [Navigation, Pagination, Scrollbar, A11y],
       swiper: null,
+      comp: 'overview-page',
       slidesMap: {
         overview: 0,
         projects: 1,
         specs: 2,
         biography: 3
       },
+      comps: ['overview-page', 'project-list', 'tech-list', 'bio-page'],
       activeSlideIndex: 0
     }
   },
@@ -62,15 +64,24 @@ export default {
   },
   methods: {
     slideTo(target) {
-      document.querySelector('.swiper')?.scrollIntoView()
-      this.swiper.slideTo(this.slidesMap[target], SPEED, false)
+      // document.querySelector('.swiper')?.scrollIntoView()
+      // this.swiper.slideTo(this.slidesMap[target], SPEED, false)
       this.activeSlideIndex = this.slidesMap[target]
+      this.comp = this.comps[this.activeSlideIndex]
+      setTimeout(() => {
+        document.querySelector('.' + target)?.scrollIntoView()
+      }, 100);
     },
     onActiveIndexChange(ev) {
       this.activeSlideIndex = ev.snapIndex
     }
   },
   computed: {
+    getHeight() {
+      const target = Object.keys(this.slidesMap).find(t => this.slidesMap[t] === this.activeSlideIndex)
+      debugger
+      return document.querySelector('.' + target)?.getBoundingClientRect().height || 'auto'
+    }
   },
   components: {
     galaxy,

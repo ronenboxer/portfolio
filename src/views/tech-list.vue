@@ -1,5 +1,5 @@
 <template>
-    <section class="tech-list">
+    <section class="specs tech-list">
         <h1 class="main-layout capitalize">Hard skills</h1>
         <div class="tech-container main-layout">
             <article class="tech-logo flex center" v-icon="'html'"></article>
