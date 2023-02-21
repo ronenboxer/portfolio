@@ -1,5 +1,5 @@
 <template>
-    <section class="overview">
+    <section class="overview page">
         <h1 class="main-layout">Overview</h1>
         <ul class="honeycomb" lang="en">
             <li class="honeycomb-cell avatar">
