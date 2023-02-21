@@ -46,7 +46,7 @@
 
 <script>
 export default {
-    name: 'work-preview',
+    name: 'project-preview',
     props: {
         proj: Object,
         id: {
@@ -54,14 +54,12 @@ export default {
             required: true
         }
     },
-    emits: [],
     data() {
         return {
             isRoundClicked: false,
             isRotate: false,
             isRoundBackHover: false,
             isLoading: true,
-            url: '',
             idxMap: {
                 about: 0,
                 projects: 1,
@@ -69,11 +67,6 @@ export default {
                 contact: 3
             }
         }
-    },
-    created() {
-        setTimeout(() => {
-            this.url = new URL(`../assets/imgs/projects/${this.proj.imgName}`, import.meta.url).href
-        }, 3000);
     },
     methods: {
         jump() {
@@ -98,8 +91,6 @@ export default {
         getImageUrl() {
             return new URL(`../assets/imgs/projects/${this.proj.imgName}`, import.meta.url).href
         },
-    },
-    components: {
     },
 }
 </script>

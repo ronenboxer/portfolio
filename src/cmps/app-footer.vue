@@ -13,9 +13,7 @@
 import contactModal from '../cmps/contact-modal.vue'
 import { eventBus } from '../services/event-bus.js'
 export default {
-    name: '',
-    props: {},
-    emits: [],
+    name: 'app-footer',
     data() {
         return {
             isActive: false,

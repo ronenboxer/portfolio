@@ -1,5 +1,5 @@
 <template>
-    <div class="menu-icon absolute">
+    <div class="menu-icon main-layout absolute">
         <button class="menu-btn flex center" :class="{opened :isMenuActive}" @click="toggleIcon" aria-label="Main Menu"
             :aria-expanded="isMenuActive ? true : false" v-icon="'hamburger-menu'">
         </button>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: '',
+    name: 'menu-icon',
     props: {
         isMenuActive: {
             type: Boolean,
@@ -19,16 +19,10 @@ export default {
         return {
         }
     },
-    created() {
-    },
     methods: {
         toggleIcon() {
             this.$emit('toggleMenuActive')
         }
-    },
-    computed: {
-    },
-    components: {
     },
 }
 </script>

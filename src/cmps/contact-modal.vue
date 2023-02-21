@@ -52,9 +52,8 @@
 import galaxy from './galaxy.vue'
 import submitButton from './submit-button.vue'
 export default {
-    name: '',
+    name: 'contact-modal',
     props: { isActive: Boolean, closeModal: Function },
-    emits: [],
     data() {
         return {
             subject: '',
@@ -68,8 +67,6 @@ export default {
             securityRegex: new RegExp(/(<[ \t\n]*script)|(<[ \t\n]*\/[ \t\n]*script[ \t\n]*>)/, 'ig'),
             key: import.meta.env.VITE_KEY
         }
-    },
-    created() {
     },
     mounted() {
         const recaptcha = document.createElement('script')

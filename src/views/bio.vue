@@ -24,21 +24,11 @@
 <script>
 import bio from '../data/bio.json' assert {type: 'json'}
 export default {
-    name: '',
-    props: {},
-    emits: [],
+    name: 'bio-page',
     data() {
         return {
             bio
         }
-    },
-    created() {
-    },
-    methods: {
-    },
-    computed: {
-    },
-    components: {
     },
 }
 </script>

@@ -11,15 +11,12 @@
 <script>
 import {gsap} from 'gsap'
 export default {
-    name: '',
+    name: 'submit-button',
     props: {isValid:Boolean},
-    emits: [],
     data() {
         return {
             elSubmitBtn: null
         }
-    },
-    created() {
     },
     mounted() {
         this.elSubmitBtn = this.$refs.submitRef
@@ -132,10 +129,6 @@ export default {
 
             }
         }
-    },
-    computed: {
-    },
-    components: {
     },
 }
 </script>

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'galaxy111',
+    name: 'galaxy',
     props: { isShown:{
         required: false,
         default: true,
@@ -28,16 +28,10 @@ export default {
         return {
         }
     },
-    created() {
-    },
     methods: {
         slideTo(target) {
             this.$emit('slideTo', target)
         }
-    },
-    computed: {
-    },
-    components: {
-    },
+    }
 }
 </script>

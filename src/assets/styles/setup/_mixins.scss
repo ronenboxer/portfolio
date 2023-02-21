@@ -60,7 +60,7 @@
 
 }
 
-// Mixin for removing hover efects on iphone screen
+// Mixin for removing hover effects on iphone screen
 @mixin hover-supported {
     @media not all and (pointer: coarse) {
         &:hover {
@@ -68,7 +68,6 @@
         }
     }
 }
-
 
 @mixin transparent($color: black) {
     border: none;
@@ -83,37 +82,6 @@
     border-radius: 50%;
 }
 
-
-
 @mixin hexagon() {
     clip-path: polygon(50% 0, 93.30127% 25%, 93.30127% 75%, 50% 100%, 6.69872% 75%, 6.69872% 25%);
-}
-
-@mixin scroll-style($size: 10px,
-    $thumb: none,
-    $thumb-color: grey,
-    $thumb-radius: 10px,
-    $track-color: transparent,
-    $track-radius: 10px) {
-
-    // Respaldo para Firefox
-    scrollbar-color: $thumb-color $track-color;
-    scrollbar-width: thin;
-
-    // Navegadores basados en webkit
-    &::-webkit-scrollbar {
-        width: $size;
-        height: $size;
-
-        &-track {
-            background-color: $track-color;
-            border-radius: $track-radius;
-        }
-
-        &-thumb {
-            background-color: $thumb-color;
-            background-image: $thumb;
-            border-radius: $thumb-radius;
-        }
-    }
 }

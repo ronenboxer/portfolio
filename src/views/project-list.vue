@@ -13,18 +13,10 @@ import projectPreview from '../cmps/project-preview.vue'
 import projects from '../data/projects.json' assert {type: 'json'}
 export default {
     name: 'projects',
-    props: {},
-    emits: [],
     data() {
         return {
             projects: projects
         }
-    },
-    created() {
-    },
-    methods: {
-    },
-    computed: {
     },
     components: {
         projectPreview

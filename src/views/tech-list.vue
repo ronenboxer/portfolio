@@ -18,7 +18,7 @@
 <script>
 import softSkills from '../data/soft-skills.json'
 export default {
-    name: 'tech-list',
+    name: 'skills-page',
     data() {
         return {
             softSkills,

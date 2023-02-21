@@ -86,17 +86,16 @@ $hover-color: $dirty-green;
                 position: sticky;
                 flex-direction: column;
                 margin-top: calc(100vh);
-                margin-right: -100%;
                 height: calc(100vh - $header-height);
                 justify-content: flex-start;
                 z-index: 1000;
-                margin-right: -$link-width;
+                margin-right: calc(0px - ($layout-margin + $link-width));
                 transition: margin .3s;
                 overflow-x: hidden;
                 overflow-y: auto;
 
                 &.active {
-                    margin-right: 0;
+                    margin-right: -$layout-margin;
                     pointer-events: all;
                 }
             }
@@ -107,10 +106,6 @@ $hover-color: $dirty-green;
 
                 .page {
                     justify-content: center;
-
-                    &:last-of-type {
-                        margin-inline-end: $layout-margin;
-                    }
                 }
             }
 

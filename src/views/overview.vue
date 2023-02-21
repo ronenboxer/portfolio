@@ -24,32 +24,11 @@
                     <small>Born and raised in Ness Ziona. It's okay if you have'nt heard about it.</small>
                 </div>
             </li>
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'puzzle'"></div>
-                <div class="honeycomb-cell__title"><small>I'm into riddles and puzzles. Wether numerical, logical or
-                        lexical, If it's challenging - I'm game.</small></div>
-            </li>
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'piano'"></div>
-                <div class="honeycomb-cell__title"><small>A trained musician. I bring passion and creativity (and perhaps pretentiousness).</small></div>
-            </li>
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'plant'"></div>
-                <div class="honeycomb-cell__title"><small>An ideal space is packed with leaves. Ask me about my home.</small></div>
-            </li>
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'coffee'"></div>
-                <div class="honeycomb-cell__title"><small>I mean...</small></div>
-            </li>
-
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'ocd'"></div>
-                <div class="honeycomb-cell__title"><small>Highly logical, absurdly organized. "A place for everything and everything in its place".</small>
+            <li v-for="{icon, description} in overview" class="honeycomb-cell">
+                <div class="honeycomb-cell__image flex center" v-icon="icon"></div>
+                <div class="honeycomb-cell__title">
+                    <small>{{ description }}</small>
                 </div>
-            </li>
-            <li class="honeycomb-cell">
-                <div class="honeycomb-cell__image flex center" v-icon="'paws'"></div>
-                <div class="honeycomb-cell__title"><small>Specifically, soft spot for 4 legged and furry. Generally nothing with more than 2 eyes. No sea creatures.</small></div>
             </li>
             <li class="honeycomb-cell empty"></li>
         </ul>
@@ -58,12 +37,13 @@
 </template>
 
 <script>
+import overview from '../data/overview.json' assert {type: 'json'}
 export default {
-    name: 'about',
-    props: {},
+    name: 'overview-page',
     emits: ['scrollTo'],
     data() {
         return {
+            overview
         }
     },
     created() {
@@ -81,8 +61,6 @@ export default {
                 ? year
                 : year - 1
         }
-    },
-    components: {
     },
 }
 </script>

@@ -61,12 +61,13 @@
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     width: 140px;
+    border: 1px solid transparent;
 
     @include hover-supported() {
         &:not(.active):not(:disabled) {
             overflow: hidden;
             border-radius: 7px;
-            outline: 1px solid $martini-green;
+            border: 1px solid $martini-green;
             >*,
             >*::after,
             >*::before {

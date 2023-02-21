@@ -1,6 +1,6 @@
 <template>
   <header ref="headerRef" class="app-header sticky full">
-    <nav class="main-nav flex between align-center">
+    <nav class="main-nav main-layout flex between align-center">
       <a class="flex center logo page" @click="scrollTo('universe')" v-icon="'logo'">
       </a>
       <menu-icon ref="menuIcon" @toggleMenuActive="toggleMenuActive" :isMenuActive="isMenuActive" />
@@ -30,8 +30,6 @@ export default {
       elMenuIcon: null,
       elHeader: null
     }
-  },
-  created() {
   },
   mounted() {
     this.elMenuIcon = this.$refs.menuIcon.$el
@@ -64,8 +62,6 @@ export default {
       const elHeaderBoundary = this.elHeader.getBoundingClientRect()
       eventBus.emit('onWindowScroll', elHeaderBoundary.y)
     }
-  },
-  computed: {
   },
   components: {
     menuIcon
