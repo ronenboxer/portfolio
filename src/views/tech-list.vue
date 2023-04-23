@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             softSkills,
-            hardSkills: ['html', 'js', 'es6', 'ts', 'css', 'sass', 'nodejs', 'express', 'vue', 'react', 'redux', 'angular', 'axios', 'git', 'jquery', 'bootstrap', 'npm', 'socket', 'mongo', 'sql', 'postman']
+            hardSkills: ['html', 'js', 'es6', 'ts', 'css', 'sass', 'nodejs', 'express', 'vue', 'vuex', 'react', 'native', 'next', 'redux', 'angular', 'axios', 'git', 'jquery', 'bootstrap', 'npm', 'socket', 'mongo', 'sql', 'postman']
         }
     },
 }
